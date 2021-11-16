@@ -7,4 +7,3 @@ COPY manage.py /api/
 COPY planeador_eventos_api /api/
 WORKDIR /api
 RUN pip install -r requirements.txt
-RUN python manage.py migrate
