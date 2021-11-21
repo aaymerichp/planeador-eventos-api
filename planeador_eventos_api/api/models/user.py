@@ -9,3 +9,8 @@ class User(models.Model):
     phone = models.CharField(max_length=200, blank=False, default='')
     image = models.CharField(max_length=200, blank=False, default='')
     is_active = models.BooleanField(default=True)
+
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['uuid', 'email'], name='user_uniqueness')
+        ]

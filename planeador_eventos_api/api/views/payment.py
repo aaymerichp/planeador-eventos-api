@@ -36,19 +36,20 @@ def delete_payment(request):
 
 
 @api_view(['PUT'])
-def put_payment(request):
+def put_payment(request, payment_uuid):
+    previous_payment = Payment.objects.get(pk=payment_uuid)
     payment = JSONParser().parse(request)
     serializer = PaymentSerializer(data=payment)
     if serializer.is_valid():
-        serializer.save()
+        serializer.update(previous_payment, payment)
         return JsonResponse(serializer.data)
     return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
-def get_payment(request):
+def get_payment(request, payment_uuid):
     try:
-        payment = Payment.objects.get(pk=request.get('uuid'))
+        payment = Payment.objects.get(pk=payment_uuid)
         serializer = PaymentSerializer(payment)
         return JsonResponse(serializer.data)
     except Payment.DoesNotExist:

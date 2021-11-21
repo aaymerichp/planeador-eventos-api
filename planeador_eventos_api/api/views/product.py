@@ -25,9 +25,9 @@ def post_product(request):
 
 
 @api_view(['DELETE'])
-def delete_product(request):
+def delete_product(request, product_uuid):
     try:
-        product = Product.objects.get(pk=request.get('uuid'))
+        product = Product.objects.get(pk=product_uuid)
         product.delete()
         return JsonResponse({'message': 'Product was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
 
@@ -36,19 +36,20 @@ def delete_product(request):
 
 
 @api_view(['PUT'])
-def put_product(request):
+def put_product(request, product_uuid):
+    previous_product = Product.objects.get(pk=product_uuid)
     product = JSONParser().parse(request)
     serializer = ProductSerializer(data=product)
     if serializer.is_valid():
-        serializer.save()
+        serializer.update(previous_product, product)
         return JsonResponse(serializer.data)
     return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
-def get_product(request):
+def get_product(request, product_uuid):
     try:
-        product = Product.objects.get(pk=request.get('uuid'))
+        product = Product.objects.get(pk=product_uuid)
         serializer = ProductSerializer(product)
         return JsonResponse(serializer.data)
     except Product.DoesNotExist:

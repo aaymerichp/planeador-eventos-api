@@ -9,4 +9,3 @@ class Subscription(models.Model):
     is_active = models.BooleanField(default=True)
 
 
-

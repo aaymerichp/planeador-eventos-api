@@ -1,6 +1,7 @@
 from django.http.response import JsonResponse
 from rest_framework.parsers import JSONParser
 from rest_framework import status
+from django.db.utils import DatabaseError
 
 from planeador_eventos_api.api.models.user import User
 from planeador_eventos_api.api.serializers.user import UserSerializer
@@ -19,8 +20,14 @@ def post_user(request):
     user = JSONParser().parse(request)
     serializer = UserSerializer(data=user)
     if serializer.is_valid():
-        serializer.save()
-        return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+        try:
+            serializer.save()
+            return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+        except DatabaseError:
+            return JsonResponse(
+                {'message': f'The user could not be added due to a conflict on the email value.'},
+                status=status.HTTP_409_CONFLICT)
+
     return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -30,7 +37,6 @@ def delete_user(request):
         user = User.objects.get(pk=request.get('uuid'))
         user.delete()
         return JsonResponse({'message': 'user was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
-
     except User.DoesNotExist:
         return JsonResponse({'message': 'The user does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -52,6 +58,16 @@ def put_user(request, user_uuid):
 def get_user(request, user_uuid):
     try:
         user = User.objects.get(pk=user_uuid)
+        serializer = UserSerializer(user)
+        return JsonResponse(serializer.data)
+    except User.DoesNotExist:
+        return JsonResponse({'message': 'The user does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET'])
+def get_user_by_email(request, user_email):
+    try:
+        user = User.objects.get(email=user_email)
         serializer = UserSerializer(user)
         return JsonResponse(serializer.data)
     except User.DoesNotExist:

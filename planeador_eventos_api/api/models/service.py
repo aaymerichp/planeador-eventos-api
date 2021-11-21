@@ -13,4 +13,3 @@ class Service(models.Model):
     canton = models.CharField(max_length=200, blank=False, default='')
     is_active = models.BooleanField(default=True)
 
-

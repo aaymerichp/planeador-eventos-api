@@ -7,6 +7,7 @@ class Event(models.Model):
     start_time = models.DateTimeField(blank=True)
     finish_time = models.DateTimeField(blank=True)
     name = models.CharField(max_length=50, blank=True, default='')
+    type = models.CharField(max_length=200, blank=False, default='')
     description = models.CharField(max_length=200, blank=False, default='')
     image = models.CharField(max_length=200, blank=True, default='')
     user = models.UUIDField(blank=True)
