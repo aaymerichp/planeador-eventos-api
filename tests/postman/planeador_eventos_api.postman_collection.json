@@ -1,0 +1,598 @@
+{
+	"info": {
+		"_postman_id": "887ed654-d2cf-45c3-a90c-2a3da477a1f1",
+		"name": "planeador_eventos_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "user.list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user.create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/user/create/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"user",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user.get",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/user/88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"user",
+								"88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user.update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"new_updated_mail@mail.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/user/update/88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"user",
+								"update",
+								"88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user.get_by_email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/user/email/test@test.com",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"user",
+								"email",
+								"test@test.com"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "service",
+			"item": [
+				{
+					"name": "service.create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"provider\": \"acb264f5-6f80-48a4-963b-f3fac86ea90e\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"type\": \"test\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true,\n    \"provincia\": \"string\",\n    \"canton\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/service/create/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"service",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service.list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/services",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service.get_by_type",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/service/type/test",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"service",
+								"type",
+								"test"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "provider",
+			"item": [
+				{
+					"name": "provider.create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"2c0faa0a-42bf-403a-a449-ef8c48b055f5\",\n    \"company_name\": \"string\",\n    \"subscription\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/provider/create/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"provider",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "provider.list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/providers",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"providers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "provider.update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"5a292732-051a-4b8a-9237-3195db73972c\",\n    \"subscription\": {}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/provider/update/e9e57ccb-a9e5-4db0-8e6f-e79e1f56e2bc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"provider",
+								"update",
+								"e9e57ccb-a9e5-4db0-8e6f-e79e1f56e2bc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "provider.get_by_user_uuid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/provider/user_uuid/8b54de01-5418-43e8-bda4-0f1a63368714",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"provider",
+								"user_uuid",
+								"8b54de01-5418-43e8-bda4-0f1a63368714"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "event",
+			"item": [
+				{
+					"name": "event.create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"start_time\": \"2021-10-15T14:00\",\n    \"finish_time\": \"2021-10-15T14:00\",\n    \"user\": \"ea28c6b1-8fe6-4d4b-926c-ece802fcac2c\",\n    \"name\": \"string\",\n    \"type\": \"testing_type\",\n    \"is_active\": true,\n    \"description\": \"string\",\n    \"image\": \"http://image.com\",\n    \"guest_count\": 100,\n    \"provincia\": [\n        \"string\",\n        \"string_segunda_provincia\"\n    ],\n    \"canton\": [\n        \"string\",\n        \"string_segundo_canton\"\n    ],\n    \"area\": [\n        \"00.00\",\n        \"00.00\"\n    ],\n    \"services\": [\n        {\n            \"uuid\": \"d25ff867-e4d9-4569-9d6f-86822bc31011\",\n            \"provider\": \"acb264f5-6f80-48a4-963b-f3fac86ea90e\",\n            \"products\": [\n                {\n                    \"uuid\":\"f7fd85a3-2724-4b9c-87cf-2c53178cb465\",\n                    \"rate_quantity\": 5\n                }   \n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/event/create/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"event",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "event.list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/events",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "event.update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"services\": [\n        {\n            \"uuid\": \"78d0c52f-73b2-4b70-9fa6-9562eb8b6096\",\n            \"provider\": \"a44c4af7-f7f6-4c11-9231-a359778a6cbb\",\n            \"products\": [\n                {\n                    \"uuid\":\"e57e60db-fbd6-429c-a6f6-46e6970aa89c\",\n                    \"rate_quantity\": 500\n                }\n            ]\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/event/update/1f5dc587-0202-4c2a-ab25-881428c12289",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"event",
+								"update",
+								"1f5dc587-0202-4c2a-ab25-881428c12289"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "event.get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/event/4d19ca6f-c07a-4ce6-bf6b-b472a2500cc6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"event",
+								"4d19ca6f-c07a-4ce6-bf6b-b472a2500cc6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "event.delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/event/delete/e0345583-0a57-4684-8f70-46e45e705daa",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"event",
+								"delete",
+								"e0345583-0a57-4684-8f70-46e45e705daa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "product.create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"service\": \"d25ff867-e4d9-4569-9d6f-86822bc31011\",\n  \"name\":\"string\",\n  \"description\": \"string\",\n  \"price\": 5000,\n  \"is_active\":true,\n  \"image\":\"http://image.com\",\n  \"rate_type\": \"Individual\",\n  \"location\": [\"00.00\",\"00.00\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/product/create/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"product",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product.list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
