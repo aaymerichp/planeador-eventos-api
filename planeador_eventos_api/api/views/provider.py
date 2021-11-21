@@ -27,9 +27,9 @@ def post_provider(request):
 @api_view(['DELETE'])
 def delete_provider(request, provider_uuid):
     try:
-        provider = Provider.objects.get(pk=request.get('event_uuid'))
+        provider = Provider.objects.get(pk=provider_uuid)
         provider.delete()
-        return JsonResponse({'message': 'provider was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
+        return JsonResponse({'message': 'Provider was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
 
     except Provider.DoesNotExist:
         return JsonResponse({'message': 'The provider does not exist'}, status=status.HTTP_404_NOT_FOUND)
@@ -49,10 +49,19 @@ def put_provider(request, provider_uuid):
 
 
 @api_view(['GET'])
-def get_provider(request):
+def get_provider(request, provider_uuid):
     try:
-        provider = Provider.objects.get(pk=request.get('uuid'))
+        provider = Provider.objects.get(pk=provider_uuid)
         serializer = ProviderSerializer(provider)
         return JsonResponse(serializer.data)
     except Provider.DoesNotExist:
         return JsonResponse({'message': 'The provider does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+@api_view(['GET'])
+def get_provider_by_user_uuid(request, user_uuid):
+    try:
+        provider = Provider.objects.get(user=user_uuid)
+        serializer = ProviderSerializer(provider)
+        return JsonResponse(serializer.data)
+    except Provider.DoesNotExist:
+        return JsonResponse({'message': f'No service with such user_uuid "{user_uuid}" found'}, status=status.HTTP_404_NOT_FOUND)

@@ -8,3 +8,7 @@ class Provider(models.Model):
     company_name = models.CharField(max_length=200, blank=False, default='')
     subscription = models.JSONField()
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(fields=['user'], name='provider_uniqueness')
+        ]

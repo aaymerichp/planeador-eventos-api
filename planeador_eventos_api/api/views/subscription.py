@@ -25,9 +25,9 @@ def post_subscription(request):
 
 
 @api_view(['DELETE'])
-def delete_subscription(request):
+def delete_subscription(request, subscription_uuid):
     try:
-        subscription = Subscription.objects.get(pk=request.get('uuid'))
+        subscription = Subscription.objects.get(pk=subscription_uuid)
         subscription.delete()
         return JsonResponse({'message': 'subscription was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
 
@@ -36,19 +36,20 @@ def delete_subscription(request):
 
 
 @api_view(['PUT'])
-def put_subscription(request):
+def put_subscription(request, subscription_uuid):
+    previous_subscription = Subscription.objects.get(pk=subscription_uuid)
     subscription = JSONParser().parse(request)
     serializer = SubscriptionSerializer(data=subscription)
     if serializer.is_valid():
-        serializer.save()
+        serializer.update(previous_subscription, subscription)
         return JsonResponse(serializer.data)
     return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
-def get_subscription(request):
+def get_subscription(request, subscription_uuid):
     try:
-        subscription = Subscription.objects.get(pk=request.get('uuid'))
+        subscription = Subscription.objects.get(pk=subscription_uuid)
         serializer = SubscriptionSerializer(subscription)
         return JsonResponse(serializer.data)
     except Subscription.DoesNotExist:
