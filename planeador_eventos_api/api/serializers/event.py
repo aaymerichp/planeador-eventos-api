@@ -10,6 +10,7 @@ class EventSerializer(serializers.ModelSerializer):
             'start_time',
             'finish_time',
             'name',
+            'type',
             'description',
             'image',
             'user',
