@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ['127.0.0.1', '34.125.252.174']
 
 # Application definition
 INSTALLED_APPS = [
+    'corsheaders',
     'planeador_eventos_api.api.apps.ApiConfig',
     'rest_framework',
     'django.contrib.admin',
@@ -41,6 +42,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -49,6 +52,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'planeador_eventos_api.urls'
 
