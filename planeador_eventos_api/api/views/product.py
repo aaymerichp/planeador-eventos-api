@@ -54,3 +54,13 @@ def get_product(request, product_uuid):
         return JsonResponse(serializer.data)
     except Product.DoesNotExist:
         return JsonResponse({'message': 'The product does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET'])
+def get_products_by_service(request, service_uuid):
+    try:
+        services = Product.objects.filter(service=service_uuid)
+        serializer = ProductSerializer(services, many=True)
+        return JsonResponse(serializer.data, safe=False)
+    except Product.DoesNotExist:
+        return JsonResponse({'message': f'No product with such service uuid "{service_uuid}" found'}, status=status.HTTP_404_NOT_FOUND)

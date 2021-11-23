@@ -2,7 +2,7 @@ from django.urls import path
 
 from planeador_eventos_api.api.views.event import get_events, get_events_by_user_uuid, get_event, post_event, put_event, delete_event
 from planeador_eventos_api.api.views.payment import get_payments, get_payment, post_payment, put_payment, delete_payment
-from planeador_eventos_api.api.views.product import get_products, get_product, post_product, put_product, delete_product
+from planeador_eventos_api.api.views.product import get_products, get_products_by_service, get_product, post_product, put_product, delete_product
 from planeador_eventos_api.api.views.provider import get_providers, get_provider, get_provider_by_user_uuid, post_provider, put_provider, delete_provider
 from planeador_eventos_api.api.views.service import get_services, get_service, get_services_by_type, post_service, put_service, delete_service
 from planeador_eventos_api.api.views.subscription import get_subscriptions, get_subscription, post_subscription, put_subscription, delete_subscription
@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('api/planeador_eventos_api/products', get_products),
     path('api/planeador_eventos_api/product/<uuid:product_uuid>', get_product),
+    path('api/planeador_eventos_api/products/service/<uuid:service_uuid>', get_products_by_service),
     path('api/planeador_eventos_api/product/create/', post_product),
     path('api/planeador_eventos_api/product/update/<uuid:product_uuid>', put_product),
     path('api/planeador_eventos_api/product/delete/<uuid:product_uuid>', delete_product),
