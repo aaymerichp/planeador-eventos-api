@@ -152,7 +152,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"provider\": \"acb264f5-6f80-48a4-963b-f3fac86ea90e\",\n    \"name\": \"string\",\n    \"description\": \"string\",\n    \"type\": \"test\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true,\n    \"provincia\": \"string\",\n    \"canton\": \"string\"\n}",
+							"raw": "{\n        \"provider\": \"55698e2c-ecbc-49be-ad1c-29ab1417a80e\",\n        \"name\": \"dfdsfsdf\",\n        \"description\": \"fsdfsdfsd\",\n        \"type\": \"Decoración\",\n        \"image\": \"https://firebasestorage.googleapis.com/v0/b/planeador-eventos-47653.appspot.com/o/profileImages%2F5fbb4b3a-b6e9-4a11-b5cf-e53a0262804c?alt=media&token=89bebc37-bde1-48a9-9509-25cf0cccf920\",\n        \"provincia\": \"Alajuela\",\n        \"canton\": \"Montes de oca\",\n        \"is_active\": true\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -224,16 +224,16 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/service/type/test",
+							"raw": "{{host}}/api/planeador_eventos_api/services/type/Decoración",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"planeador_eventos_api",
-								"service",
+								"services",
 								"type",
-								"test"
+								"Decoración"
 							]
 						}
 					},
@@ -251,7 +251,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user\": \"2c0faa0a-42bf-403a-a449-ef8c48b055f5\",\n    \"company_name\": \"string\",\n    \"subscription\": {}\n}",
+							"raw": "{\n    \"user\": \"73969f2a-21d4-4b28-bf0e-44e7ac67f7d3\",\n    \"company_name\": \"string\",\n    \"subscription\": {}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -380,7 +380,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"start_time\": \"2021-10-15T14:00\",\n    \"finish_time\": \"2021-10-15T14:00\",\n    \"user\": \"ea28c6b1-8fe6-4d4b-926c-ece802fcac2c\",\n    \"name\": \"string\",\n    \"type\": \"testing_type\",\n    \"is_active\": true,\n    \"description\": \"string\",\n    \"image\": \"http://image.com\",\n    \"guest_count\": 100,\n    \"provincia\": [\n        \"string\",\n        \"string_segunda_provincia\"\n    ],\n    \"canton\": [\n        \"string\",\n        \"string_segundo_canton\"\n    ],\n    \"area\": [\n        \"00.00\",\n        \"00.00\"\n    ],\n    \"services\": [\n        {\n            \"uuid\": \"d25ff867-e4d9-4569-9d6f-86822bc31011\",\n            \"provider\": \"acb264f5-6f80-48a4-963b-f3fac86ea90e\",\n            \"products\": [\n                {\n                    \"uuid\":\"f7fd85a3-2724-4b9c-87cf-2c53178cb465\",\n                    \"rate_quantity\": 5\n                }   \n            ]\n        }\n    ]\n}",
+							"raw": "{\n    \"start_time\": \"2021-10-15T14:00\",\n    \"finish_time\": \"2021-10-15T14:00\",\n    \"user\": \"ea28c6b1-8fe6-4d4b-926c-ece802fcac2c\",\n    \"name\": \"test_2\",\n    \"type\": \"testing_type\",\n    \"is_active\": true,\n    \"description\": \"string\",\n    \"image\": \"http://image.com\",\n    \"guest_count\": 100,\n    \"provincia\": [\n        \"string\",\n        \"string_segunda_provincia\"\n    ],\n    \"canton\": [\n        \"string\",\n        \"string_segundo_canton\"\n    ],\n    \"area\": [\n        \"00.00\",\n        \"00.00\"\n    ],\n    \"services\": [\n        {\n            \"uuid\": \"8edc03f9-7deb-4335-a6ff-3a0dfaab0bae\",\n            \"provider\": \"55698e2c-ecbc-49be-ad1c-29ab1417a80e\",\n            \"products\": [\n                {\n                    \"uuid\":\"d7bc29c2-4c6f-4989-b8da-0dfe14d3c3f6\",\n                    \"rate_quantity\": 5\n                }   \n            ]\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -525,6 +525,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "event.get_by_user_uuid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/events/user/ea28c6b1-8fe6-4d4b-926c-ece802fcac2c",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"planeador_eventos_api",
+								"events",
+								"user",
+								"ea28c6b1-8fe6-4d4b-926c-ece802fcac2c"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -538,7 +571,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"service\": \"d25ff867-e4d9-4569-9d6f-86822bc31011\",\n  \"name\":\"string\",\n  \"description\": \"string\",\n  \"price\": 5000,\n  \"is_active\":true,\n  \"image\":\"http://image.com\",\n  \"rate_type\": \"Individual\",\n  \"location\": [\"00.00\",\"00.00\"]\n}",
+							"raw": "{\n  \"service\": \"8edc03f9-7deb-4335-a6ff-3a0dfaab0bae\",\n  \"name\":\"string\",\n  \"description\": \"string\",\n  \"price\": 5000,\n  \"is_active\":true,\n  \"image\":\"http://image.com\",\n  \"rate_type\": \"Individual\",\n  \"location\": [\"00.00\",\"00.00\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
