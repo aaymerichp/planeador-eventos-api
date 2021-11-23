@@ -56,11 +56,11 @@ def get_service(request, service_uuid):
         return JsonResponse({'message': 'The service does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(['GET'])
-def get_service_by_type(request, service_type):
+def get_services_by_type(request, service_type):
     try:
-        service = Service.objects.get(type=service_type)
-        serializer = ServiceSerializer(service)
-        return JsonResponse(serializer.data)
+        services = Service.objects.filter(type=service_type)
+        serializer = ServiceSerializer(services, many=True)
+        return JsonResponse(serializer.data, safe=False)
     except Service.DoesNotExist:
         return JsonResponse({'message': f'No service with such type "{service_type}" found'}, status=status.HTTP_404_NOT_FOUND)
 

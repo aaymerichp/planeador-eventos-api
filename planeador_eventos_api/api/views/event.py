@@ -62,3 +62,14 @@ def get_event(request, event_uuid):
         return JsonResponse(serializer.data)
     except Event.DoesNotExist:
         return JsonResponse({'message': 'The event does not exist'}, status=status.HTTP_404_NOT_FOUND)
+
+
+@api_view(['GET'])
+def get_events_by_user_uuid(request, user_uuid):
+    try:
+        services = Event.objects.filter(user=user_uuid)
+        serializer = EventSerializer(services, many=True)
+        return JsonResponse(serializer.data, safe=False)
+    except Event.DoesNotExist:
+        return JsonResponse({'message': f'No service with such type "{service_type}" found'}, status=status.HTTP_404_NOT_FOUND)
+
