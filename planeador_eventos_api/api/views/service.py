@@ -17,10 +17,12 @@ def get_services(request):
 @api_view(['POST'])
 def post_service(request):
     service = JSONParser().parse(request)
+    print(service)
     serializer = ServiceSerializer(data=service)
     if serializer.is_valid():
         serializer.save()
-        return JsonResponse(serializer.data, status=status.HTTP_201_CREATED)
+        saved = serializer.data
+        return JsonResponse({'uuid': saved.get('uuid')}, status=status.HTTP_201_CREATED)
     return JsonResponse(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -64,3 +66,7 @@ def get_services_by_type(request, service_type):
     except Service.DoesNotExist:
         return JsonResponse({'message': f'No service with such type "{service_type}" found'}, status=status.HTTP_404_NOT_FOUND)
 
+# @api_view(['GET'])
+# def get_services_by_lat_long(request, lat, long):
+#     try:
+#         services = Service.object.filter()

@@ -33,6 +33,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'planeador_eventos_api.api.apps.ApiConfig',
     'rest_framework',
+    'rest_framework_mongoengine',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

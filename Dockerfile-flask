@@ -1,0 +1,16 @@
+FROM python:3
+
+ENV APP /api
+
+RUN mkdir $APP
+WORKDIR $APP
+EXPOSE 5000
+
+COPY uwsgi.ini $APP
+COPY requirements.txt $APP
+
+RUN pip install -r requirements.txt
+COPY ./api $APP
+
+
+CMD [ "uwsgi", "--ini", "/api/uwsgi.ini" ]
