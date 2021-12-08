@@ -1,8 +1,9 @@
 from rest_framework import serializers
 from planeador_eventos_api.api.models.service import Service
 
+from rest_framework_mongoengine.serializers import DocumentSerializer
 
-class ServiceSerializer(serializers.ModelSerializer):
+class ServiceSerializer(DocumentSerializer):
     class Meta:
         model = Service
         fields = (
@@ -14,5 +15,6 @@ class ServiceSerializer(serializers.ModelSerializer):
             'image',
             'provincia',
             'canton',
-            'is_active'
+            'is_active',
+            'long_lat'
         )

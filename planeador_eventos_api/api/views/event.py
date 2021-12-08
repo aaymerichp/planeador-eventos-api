@@ -58,8 +58,10 @@ def get_event(request, event_uuid):
 
     try:
         event = Event.objects.get(pk=event_uuid)
+        controller = EventController(event)
+        event.services = controller.query_services()
         serializer = EventSerializer(event)
-        return JsonResponse(serializer.data)
+        return JsonResponse(serializer.data, safe=False)
     except Event.DoesNotExist:
         return JsonResponse({'message': 'The event does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
@@ -71,5 +73,5 @@ def get_events_by_user_uuid(request, user_uuid):
         serializer = EventSerializer(services, many=True)
         return JsonResponse(serializer.data, safe=False)
     except Event.DoesNotExist:
-        return JsonResponse({'message': f'No service with such type "{service_type}" found'}, status=status.HTTP_404_NOT_FOUND)
+        return JsonResponse({'message': f'No service associated to such user_uuid "{user_uuid}" found'}, status=status.HTTP_404_NOT_FOUND)
 
