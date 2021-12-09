@@ -18,11 +18,11 @@ def update_provider(uuid):
     return jsonify(mongo_helper.update_one(COLLECTION, request.json, uuid))
 
 
-@app.route(f'/{API_ROUTE}/{OBJECT}/<uuid:uuid>')
+@app.route(f'/{API_ROUTE}/{OBJECT}/<uuid:uuid>', methods=['GET'])
 def get_provider_by_uuid(uuid):
     match = mongo_helper.get_object_by_uuid(COLLECTION, uuid)
     if match:
-        return jsonify(match[0])
+        return jsonify(match)
     return make_response(jsonify({"message": "No match found"}), 404)
 
 

@@ -24,7 +24,7 @@ def update_service(uuid):
 def get_service_by_uuid(uuid):
     match = mongo_helper.get_object_by_uuid(COLLECTION, uuid)
     if match:
-        return jsonify(match[0])
+        return jsonify(match.pop())
     return make_response(jsonify({"message": "No match found"}), 404)
 
 
@@ -33,17 +33,17 @@ def get_services():
     return jsonify(mongo_helper.get_all_in_collection(COLLECTION))
 
 
-@app.route(f'/{API_ROUTE}/{COLLECTION}/type/<string:type>')
+@app.route(f'/{API_ROUTE}/{COLLECTION}/type/<string:type>', methods=['GET'])
 def get_services_by_type(type):
     return jsonify(mongo_helper.get_objects_by_attribute(COLLECTION, 'type', type))
 
 
-@app.route(f'/{API_ROUTE}/{COLLECTION}/provider/<string:provider>')
+@app.route(f'/{API_ROUTE}/{COLLECTION}/provider/<string:provider>', methods=['GET'])
 def get_services_by_provider(provider):
     return jsonify(mongo_helper.get_objects_by_attribute(COLLECTION, 'provider', provider))
 
 
-@app.route(f'/{API_ROUTE}/{COLLECTION}/nearby/<string:long>/<string:lat>')
+@app.route(f'/{API_ROUTE}/{COLLECTION}/nearby/<string:long>/<string:lat>', methods=['GET'])
 def get_services_nearby(long, lat):
     long = float(long)
     lat = float(lat)
@@ -53,3 +53,5 @@ def get_services_nearby(long, lat):
     for service in results:
         service.pop('_id')
     return jsonify(results)
+
+# TODO: get_events_services_by_provider_uuid

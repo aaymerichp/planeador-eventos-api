@@ -21,11 +21,10 @@ class MongoHelper():
 
     def get_object_by_uuid(self, collection: str, uuid: str) -> dict:
         collection = self.get_collection(collection)
-        results = list(collection.find({'uuid': uuid}))
-        if results:
-            for service in results:
-                service.pop('_id')
-            return results[0]
+        result = collection.find_one({'uuid': uuid})
+        if result:
+            result.pop('_id')
+            return result
 
     def get_objects_by_attribute(self, collection: str, attribute: str, filter: Union[str, list]) -> list:
         collection = self.get_collection(collection)
@@ -48,4 +47,8 @@ class MongoHelper():
         new_values = {"$set": object}
         updated = collection.update_one({'uuid': uuid}, new_values)
         if updated:
-            return object
+            print(uuid)
+            result = collection.find_one({'uuid': uuid})
+            if result:
+                result.pop('_id')
+                return result

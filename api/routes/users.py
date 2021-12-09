@@ -22,7 +22,7 @@ def update_user(uuid):
 def get_user_by_uuid(uuid):
     match = mongo_helper.get_object_by_uuid(COLLECTION, uuid)
     if match:
-        return jsonify(match[0])
+        return jsonify(match)
     return make_response(jsonify({"message": "No match found"}), 404)
 
 
