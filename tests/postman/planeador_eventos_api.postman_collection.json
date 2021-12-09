@@ -26,12 +26,11 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/users",
+							"raw": "{{host}}/planeador_eventos_api/users",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"users"
 							]
@@ -54,16 +53,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/user/create/",
+							"raw": "{{host}}/planeador_eventos_api/user/create",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"user",
-								"create",
-								""
+								"create"
 							]
 						}
 					},
@@ -75,15 +72,14 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/user/88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0",
+							"raw": "{{host}}/planeador_eventos_api/user/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"user",
-								"88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0"
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
 							]
 						}
 					},
@@ -96,7 +92,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"new_updated_mail@mail.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\"\n}",
+							"raw": "{\n    \"email\": \"new_updated__new_mail@mail.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -104,16 +100,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/user/update/88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0",
+							"raw": "{{host}}/planeador_eventos_api/user/update/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"user",
 								"update",
-								"88912fec-42b2-4f47-ad3a-6a6e1e9e2ca0"
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
 							]
 						}
 					},
@@ -125,16 +120,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/user/email/test@test.com",
+							"raw": "{{host}}/planeador_eventos_api/user/email/new_updated_mail@mail.com",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"user",
 								"email",
-								"test@test.com"
+								"new_updated_mail@mail.com"
 							]
 						}
 					},
@@ -152,7 +146,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"provider\": \"55698e2c-ecbc-49be-ad1c-29ab1417a80e\",\n        \"name\": \"dfdsfsdf\",\n        \"description\": \"fsdfsdfsd\",\n        \"type\": \"Decoración\",\n        \"image\": \"https://firebasestorage.googleapis.com/v0/b/planeador-eventos-47653.appspot.com/o/profileImages%2F5fbb4b3a-b6e9-4a11-b5cf-e53a0262804c?alt=media&token=89bebc37-bde1-48a9-9509-25cf0cccf920\",\n        \"provincia\": \"Alajuela\",\n        \"canton\": \"Montes de oca\",\n        \"is_active\": true\n    }",
+							"raw": "{\n        \"provider\": \"d011b895-0766-444a-9fa3-06075775b67d\",\n        \"name\": \"Equipo de coreografia\",\n        \"description\": \"fsdfsdfsd\",\n        \"type\": \"Decoración\",\n        \"image\": \"https://firebasestorage.googleapis.com/v0/b/planeador-eventos-47653.appspot.com/o/profileImages%2F5fbb4b3a-b6e9-4a11-b5cf-e53a0262804c?alt=media&token=89bebc37-bde1-48a9-9509-25cf0cccf920\",\n        \"provincia\": \"Alajuela\",\n        \"canton\": \"Montes de oca\",\n        \"is_active\": true,\n        \"long_lat\": {\n            \"type\": \"Point\",\n            \"coordinates\": [10.058082883459361, -84.08186609499008]\n        }\n    }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -160,16 +154,43 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/service/create/",
+							"raw": "{{host}}/planeador_eventos_api/service/create",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"service",
-								"create",
-								""
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service.update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"provider\": \"55698e2c-ecbc-49be-ad1c-29ab1417a80e\",\n        \"name\": \"UPDATED Equipo de coreografia\",\n        \"description\": \"fsdfsdfsd\",\n        \"type\": \"Decoración\",\n        \"image\": \"https://firebasestorage.googleapis.com/v0/b/planeador-eventos-47653.appspot.com/o/profileImages%2F5fbb4b3a-b6e9-4a11-b5cf-e53a0262804c?alt=media&token=89bebc37-bde1-48a9-9509-25cf0cccf920\",\n        \"provincia\": \"Alajuela\",\n        \"canton\": \"Montes de oca\",\n        \"is_active\": true,\n        \"long_lat\": {\n            \"type\": \"Point\",\n            \"coordinates\": [10.058082883459361, -84.08186609499008]\n        }\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/service/update/8a00627e-9c25-43cd-b1b9-81839d5f9d21",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"service",
+								"update",
+								"8a00627e-9c25-43cd-b1b9-81839d5f9d21"
 							]
 						}
 					},
@@ -193,14 +214,77 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/services",
+							"raw": "{{host}}/planeador_eventos_api/services",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service.get",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/service/8a00627e-9c25-43cd-b1b9-81839d5f9d21",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"service",
+								"8a00627e-9c25-43cd-b1b9-81839d5f9d21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service.get_nearby",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/services/nearby/10/-84",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"services",
+								"nearby",
+								"10",
+								"-84"
 							]
 						}
 					},
@@ -224,16 +308,47 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/services/type/Decoración",
+							"raw": "{{host}}/planeador_eventos_api/services/type/Decoración",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"services",
 								"type",
 								"Decoración"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "service.get_by_provider",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/services/provider/55698e2c-ecbc-49be-ad1c-29ab1417a80e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"services",
+								"provider",
+								"55698e2c-ecbc-49be-ad1c-29ab1417a80e"
 							]
 						}
 					},
@@ -251,7 +366,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user\": \"73969f2a-21d4-4b28-bf0e-44e7ac67f7d3\",\n    \"company_name\": \"string\",\n    \"subscription\": {}\n}",
+							"raw": "{\n    \"user\": \"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27\",\n    \"company_name\": \"string\",\n    \"subscription\": {}\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -259,16 +374,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/provider/create/",
+							"raw": "{{host}}/planeador_eventos_api/provider/create",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"provider",
-								"create",
-								""
+								"create"
 							]
 						}
 					},
@@ -292,12 +405,11 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/providers",
+							"raw": "{{host}}/planeador_eventos_api/providers",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"providers"
 							]
@@ -353,16 +465,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/provider/user_uuid/8b54de01-5418-43e8-bda4-0f1a63368714",
+							"raw": "{{host}}/planeador_eventos_api/provider/user_uuid/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"provider",
 								"user_uuid",
-								"8b54de01-5418-43e8-bda4-0f1a63368714"
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
 							]
 						}
 					},
@@ -380,7 +491,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"start_time\": \"2021-10-15T14:00\",\n    \"finish_time\": \"2021-10-15T14:00\",\n    \"user\": \"ea28c6b1-8fe6-4d4b-926c-ece802fcac2c\",\n    \"name\": \"test_2\",\n    \"type\": \"testing_type\",\n    \"is_active\": true,\n    \"description\": \"string\",\n    \"image\": \"http://image.com\",\n    \"guest_count\": 100,\n    \"provincia\": [\n        \"string\",\n        \"string_segunda_provincia\"\n    ],\n    \"canton\": [\n        \"string\",\n        \"string_segundo_canton\"\n    ],\n    \"area\": [\n        \"00.00\",\n        \"00.00\"\n    ],\n    \"services\": [\n        {\n            \"uuid\": \"8edc03f9-7deb-4335-a6ff-3a0dfaab0bae\",\n            \"provider\": \"55698e2c-ecbc-49be-ad1c-29ab1417a80e\",\n            \"products\": [\n                {\n                    \"uuid\":\"d7bc29c2-4c6f-4989-b8da-0dfe14d3c3f6\",\n                    \"rate_quantity\": 5\n                }   \n            ]\n        }\n    ]\n}",
+							"raw": "{\n    \"start_time\": \"2021-10-15T14:00\",\n    \"finish_time\": \"2021-10-15T14:00\",\n    \"user\": \"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27\",\n    \"name\": \"test_2\",\n    \"type\": \"testing_type\",\n    \"is_active\": true,\n    \"description\": \"string\",\n    \"image\": \"http://image.com\",\n    \"guest_count\": 100,\n    \"provincia\": [\n        \"string\",\n        \"string_segunda_provincia\"\n    ],\n    \"canton\": [\n        \"string\",\n        \"string_segundo_canton\"\n    ],\n    \"long_lat\": {\n        \"type\": \"Point\",\n        \"coordinates\": [\n            10.058082883459361,\n            -84.08186609499008\n        ]\n    },\n    \"services\": [\n        {\n            \"uuid\": \"7b83aa1b-4b47-4246-98f4-bce447cf3149\",\n            \"provider\": \"d011b895-0766-444a-9fa3-06075775b67d\",\n            \"products\": [\n                {\n                    \"uuid\": \"f092e50a-ab2c-4865-9b7a-c55315c39099\",\n                    \"rate_quantity\": 5\n                }\n            ]\n        }\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -388,16 +499,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/event/create/",
+							"raw": "{{host}}/planeador_eventos_api/event/create",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"event",
-								"create",
-								""
+								"create"
 							]
 						}
 					},
@@ -421,12 +530,11 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/events",
+							"raw": "{{host}}/planeador_eventos_api/events",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"events"
 							]
@@ -482,45 +590,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/event/4d19ca6f-c07a-4ce6-bf6b-b472a2500cc6",
+							"raw": "{{host}}/planeador_eventos_api/event/299e300a-0614-460e-a210-566565f2a78b",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"event",
-								"4d19ca6f-c07a-4ce6-bf6b-b472a2500cc6"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "event.delete",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/event/delete/e0345583-0a57-4684-8f70-46e45e705daa",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"api",
-								"planeador_eventos_api",
-								"event",
-								"delete",
-								"e0345583-0a57-4684-8f70-46e45e705daa"
+								"299e300a-0614-460e-a210-566565f2a78b"
 							]
 						}
 					},
@@ -544,16 +621,15 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/events/user/ea28c6b1-8fe6-4d4b-926c-ece802fcac2c",
+							"raw": "{{host}}/planeador_eventos_api/events/user/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"events",
 								"user",
-								"ea28c6b1-8fe6-4d4b-926c-ece802fcac2c"
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
 							]
 						}
 					},
@@ -571,7 +647,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"service\": \"8edc03f9-7deb-4335-a6ff-3a0dfaab0bae\",\n  \"name\":\"string\",\n  \"description\": \"string\",\n  \"price\": 5000,\n  \"is_active\":true,\n  \"image\":\"http://image.com\",\n  \"rate_type\": \"Individual\",\n  \"location\": [\"00.00\",\"00.00\"]\n}",
+							"raw": "{\n  \"service\": \"7b83aa1b-4b47-4246-98f4-bce447cf3149\",\n  \"name\":\"string\",\n  \"description\": \"string\",\n  \"price\": 5000,\n  \"is_active\":true,\n  \"image\":\"http://image.com\",\n  \"rate_type\": \"Individual\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -579,16 +655,14 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/product/create/",
+							"raw": "{{host}}/planeador_eventos_api/product/create",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"product",
-								"create",
-								""
+								"create"
 							]
 						}
 					},
@@ -612,14 +686,172 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/products",
+							"raw": "{{host}}/planeador_eventos_api/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product.get_by_service_uuid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/planeador_eventos_api/products/service/8edc03f9-7deb-4335-a6ff-3a0dfaab0bae",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
 								"api",
 								"planeador_eventos_api",
-								"products"
+								"products",
+								"service",
+								"8edc03f9-7deb-4335-a6ff-3a0dfaab0bae"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "payment.create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"amount\":29000,\n    \"payment_date\":\"Dec 8, 2021 9:34:30 AM\",\n    \"service\": \"7b83aa1b-4b47-4246-98f4-bce447cf3149\",\n    \"event\": \"299e300a-0614-460e-a210-566565f2a78b\",\n    \"user\":{\n        \"email\":\"josfalme@gmail.com\",\n        \"image\":\"https://firebasestorage.googleapis.com/v0/b/planeador-eventos-47653.appspot.com/o/profileImages%2Fcd281650-284e-44eb-bb27-2a8d7c13b5a2?alt\\u003dmedia\\u0026token\\u003dd697b598-0a53-43e0-898b-e1f3e2ed837d\",\n        \"is_active\":true,\n        \"name\":\"Jose Fallas\",\n        \"phone\":\"86699150\",\n        \"type\":\"PROVIDER\",\n        \"uuid\":\"368b5be8-7174-4a48-9450-11c5dd10e293\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/payment/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"payment",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payment.list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/payments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "subscription",
+			"item": [
+				{
+					"name": "subscription.create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"provider\": \"d011b895-0766-444a-9fa3-06075775b67d\",\n  \"subscription\": {\n    \"initial_date\": \"Dec 9, 2021 9:34:30 AM\",\n    \"is_active\":true,\n    \"rate\": 4.99,\n    \"plan_name\": \"Platinum\",\n    \"allowed_services_count\": 10\n  }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/subscription/create",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"subscription",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subscription.list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/subscriptions",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"subscriptions"
 							]
 						}
 					},
