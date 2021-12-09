@@ -3,6 +3,7 @@ from flask import request, jsonify, Response, make_response
 from api.helper.json_encoder import JSONEncoder
 from api.app import app, mongo_helper
 from api.constants import API_ROUTE
+from api.controller.services import ServicesController
 
 OBJECT = 'service'
 COLLECTION = 'services'
@@ -54,4 +55,9 @@ def get_services_nearby(long, lat):
         service.pop('_id')
     return jsonify(results)
 
-# TODO: get_events_services_by_provider_uuid
+@app.route(f'/{API_ROUTE}/{COLLECTION}/in_events/provider/<string:provider>', methods=['GET'])
+def get_events_services_by_provider_uuid(provider):
+    services_controller = ServicesController(request.json)
+    print(provider)
+    services = services_controller.get_services_in_events_by_provider_uuid(provider)
+    return jsonify(services)

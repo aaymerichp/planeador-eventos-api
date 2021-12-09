@@ -353,6 +353,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "service.get_in_events_by_provider",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/services/in_events/provider/d011b895-0766-444a-9fa3-06075775b67d",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"services",
+								"in_events",
+								"provider",
+								"d011b895-0766-444a-9fa3-06075775b67d"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
