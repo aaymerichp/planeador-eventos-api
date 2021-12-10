@@ -17,6 +17,7 @@ flask_uuid = FlaskUUID()
 flask_uuid.init_app(app)
 
 import api.routes.events
+import api.routes.invoices
 import api.routes.payments
 import api.routes.products
 import api.routes.providers

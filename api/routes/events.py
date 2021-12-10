@@ -14,7 +14,7 @@ def create_event():
     event_controller = EventController(request.json)
     new_event = request.json
     calculated_services = event_controller.add_services_to_event()
-    if not calculated_services:
+    if request.json.get('services') and not calculated_services:
         return make_response(jsonify({"message": "No match found for a certain product"}), 404)
     new_event['services'] = calculated_services
     inserted = mongo_helper.insert_one(COLLECTION, new_event)

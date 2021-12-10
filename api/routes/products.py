@@ -30,7 +30,7 @@ def get_products():
     return jsonify(mongo_helper.get_all_in_collection(COLLECTION))
 
 
-@app.route(f'/{API_ROUTE}/{COLLECTION}/service/<string:type>')
+@app.route(f'/{API_ROUTE}/{COLLECTION}/service/<string:service>')
 def get_products_by_service(service):
     return jsonify(mongo_helper.get_objects_by_attribute(COLLECTION, 'service', service))
 
