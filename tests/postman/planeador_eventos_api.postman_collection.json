@@ -749,12 +749,11 @@
 							}
 						},
 						"url": {
-							"raw": "{{host}}/api/planeador_eventos_api/products/service/8edc03f9-7deb-4335-a6ff-3a0dfaab0bae",
+							"raw": "{{host}}/planeador_eventos_api/products/service/8edc03f9-7deb-4335-a6ff-3a0dfaab0bae",
 							"host": [
 								"{{host}}"
 							],
 							"path": [
-								"api",
 								"planeador_eventos_api",
 								"products",
 								"service",
@@ -885,6 +884,43 @@
 							"path": [
 								"planeador_eventos_api",
 								"subscriptions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "invoice",
+			"item": [
+				{
+					"name": "invoice.get_by_event_uuid",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"test@test.com\",\n    \"name\": \"string\",\n    \"type\": \"admin\",\n    \"phone\": \"87412335\",\n    \"image\": \"http://image.com\",\n    \"is_active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/invoice/event/299e300a-0614-460e-a210-566565f2a78b",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"invoice",
+								"event",
+								"299e300a-0614-460e-a210-566565f2a78b"
 							]
 						}
 					},
