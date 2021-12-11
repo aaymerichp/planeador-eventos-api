@@ -10,9 +10,12 @@ COLLECTION = 'payments'
 
 @app.route(f'/{API_ROUTE}/{OBJECT}/create', methods=['POST'])
 def create_payment():
-    payment_controller = PaymentController(request.json)
-    new_payment = payment_controller.pay_service_in_event()
-    return jsonify(new_payment)
+    if request.json.get('event') and request.json.get('service'):
+        payment_controller = PaymentController(request.json)
+        new_payment = payment_controller.pay_service_in_event()
+        return jsonify(new_payment)
+    else:
+        return jsonify(mongo_helper.insert_one(COLLECTION, request.json))
 
 
 @app.route(f'/{API_ROUTE}/{OBJECT}/update/<uuid:uuid>', methods=['PUT'])
@@ -31,3 +34,8 @@ def get_payment_by_uuid(uuid):
 @app.route(f'/{API_ROUTE}/{COLLECTION}', methods=['GET'])
 def get_payments():
     return jsonify(mongo_helper.get_all_in_collection(COLLECTION))
+
+@app.route(f'/{API_ROUTE}/{COLLECTION}/user/<string:user>')
+def get_payments_by_user(user):
+    return jsonify(mongo_helper.get_objects_by_attribute(COLLECTION, 'user.uuid', user))
+

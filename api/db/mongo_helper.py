@@ -32,7 +32,6 @@ class MongoHelper():
         for service in results:
             service.pop('_id')
         return results
-
     def insert_one(self, collection: str, object: dict) -> dict:
         collection = self.get_collection(collection)
         content = {'uuid': uuid4()}
