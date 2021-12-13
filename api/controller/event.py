@@ -25,7 +25,7 @@ class EventController():
         merged_services = []
         if previous_event:
             for new_service in services:
-                merged_services = previous_event.services
+                merged_services = previous_event.get('services')
                 merged_services.append(new_service)
 
         if merged_services:
@@ -48,7 +48,6 @@ class EventController():
         amount = 0
         products = []
         for product in service.get('products'):
-            print(product)
             product_payment_amount = 0
             product_obj = mongo_helper.get_object_by_uuid('products', UUID(product.get('uuid')))
             if not product_obj:

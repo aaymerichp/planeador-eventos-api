@@ -32,7 +32,7 @@ def update_event(uuid):
         if not calculated_services:
             return make_response(jsonify({"message": "No match found for a certain product"}), 404)
     new_event['services'] = calculated_services
-    inserted = mongo_helper.insert_one(COLLECTION, new_event)
+    inserted = mongo_helper.update_one(COLLECTION, new_event, uuid)
     json_response = JSONEncoder(ensure_ascii=False).encode(inserted)
     return Response(json_response, status=200, mimetype="application/json")
 
