@@ -8,12 +8,8 @@ class EventController():
 
     def query_services(self):
         services = self.event.get('services')
-        services_uuids = [service.get('uuid') for service in services]
-        services_from_db = list(mongo_helper.get_objects_by_attribute('services', 'uuid', services_uuids))
-        print('services_from_db', services_from_db)
         for service in services:
-            print('service', service)
-            service_from_db = next((item for item in services_from_db if item['uuid'] == UUID(service['uuid'])), None)
+            service_from_db = mongo_helper.get_object_by_uuid('services', UUID(service.get('uuid')))
             if service_from_db:
                 service['name'] = service_from_db.get('name')
                 service['type'] = service_from_db.get('type')
