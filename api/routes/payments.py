@@ -1,4 +1,5 @@
 from flask import request, jsonify, Response, make_response
+from uuid import UUID
 
 from api.app import app, mongo_helper
 from api.constants import API_ROUTE
@@ -37,5 +38,6 @@ def get_payments():
 
 @app.route(f'/{API_ROUTE}/{COLLECTION}/user/<string:user>')
 def get_payments_by_user(user):
+    print("user", user)
     return jsonify(mongo_helper.get_objects_by_attribute(COLLECTION, 'user.uuid', user))
 

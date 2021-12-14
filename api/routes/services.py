@@ -58,6 +58,5 @@ def get_services_nearby(long, lat):
 @app.route(f'/{API_ROUTE}/{COLLECTION}/in_events/provider/<string:provider>', methods=['GET'])
 def get_events_services_by_provider_uuid(provider):
     services_controller = ServicesController(request.json)
-    print(provider)
     services = services_controller.get_services_in_events_by_provider_uuid(provider)
     return jsonify(services)
