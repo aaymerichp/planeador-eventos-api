@@ -963,12 +963,12 @@
 			"name": "reports",
 			"item": [
 				{
-					"name": "services_in_events_by_provider_uuid",
+					"name": "pending_services_in_events_by_provider_uuid",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/planeador_eventos_api/report/pending_services_in_events/d011b895-0766-444a-9fa3-06075775b67d",
+							"raw": "{{host}}/planeador_eventos_api/report/pending_services_in_events/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
 							"host": [
 								"{{host}}"
 							],
@@ -976,19 +976,19 @@
 								"planeador_eventos_api",
 								"report",
 								"pending_services_in_events",
-								"d011b895-0766-444a-9fa3-06075775b67d"
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "services_in_events_by_provider_uuid Copy",
+					"name": "services_in_events_by_provider_uuid",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/planeador_eventos_api/report/services_in_events/d011b895-0766-444a-9fa3-06075775b67d",
+							"raw": "{{host}}/planeador_eventos_api/report/services_in_events/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
 							"host": [
 								"{{host}}"
 							],
@@ -996,19 +996,19 @@
 								"planeador_eventos_api",
 								"report",
 								"services_in_events",
-								"d011b895-0766-444a-9fa3-06075775b67d"
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "invoiced_services_current_month Copy",
+					"name": "invoiced_services_current_month",
 					"request": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{host}}/planeador_eventos_api/report/invoiced_services_current_month/d011b895-0766-444a-9fa3-06075775b67d",
+							"raw": "{{host}}/planeador_eventos_api/report/invoiced_services_current_month/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
 							"host": [
 								"{{host}}"
 							],
@@ -1016,18 +1016,29 @@
 								"planeador_eventos_api",
 								"report",
 								"invoiced_services_current_month",
-								"d011b895-0766-444a-9fa3-06075775b67d"
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "invoiced_services_last_month Copy",
+					"name": "invoiced_services_last_month",
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": null
+						"url": {
+							"raw": "{{host}}/planeador_eventos_api/report/invoiced_services_last_month/a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"planeador_eventos_api",
+								"report",
+								"invoiced_services_last_month",
+								"a11d39d6-bdbd-4f08-92cd-0dce38ddbd27"
+							]
+						}
 					},
 					"response": []
 				}
