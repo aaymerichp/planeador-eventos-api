@@ -21,6 +21,7 @@ import api.routes.invoices
 import api.routes.payments
 import api.routes.products
 import api.routes.providers
+import api.routes.reports
 import api.routes.services
 import api.routes.subscriptions
 import api.routes.users
