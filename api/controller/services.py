@@ -12,7 +12,8 @@ class ServicesController():
         for event in events:
             for service in event.get('services'):
                 if service.get('provider') == provider_uuid:
-                    event.pop('services')
+                    if event.get('services'):
+                        event.pop('services')
                     service['event'] = event
                     if event.get('user'):
                         service['user'] = mongo_helper.get_object_by_uuid('users', UUID(event.get('user')))
