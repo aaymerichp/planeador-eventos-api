@@ -6,14 +6,12 @@ class ServicesController():
     def __init__(self, service):
         self.service = service
 
-    def get_services_in_events_by_provider_uuid(self, provider):
+    def get_services_in_events_by_provider_uuid(self, provider_uuid):
         return_services = []
-        events = mongo_helper.get_all_in_collection('events')
+        events = mongo_helper.get_objects_by_attribute('events', 'services.provider', provider_uuid)
         for event in events:
-            if not event.get('services'):
-                return return_services
             for service in event.get('services'):
-                if service.get('provider') == provider:
+                if service.get('provider') == provider_uuid:
                     event.pop('services')
                     service['event'] = event
                     if event.get('user'):
