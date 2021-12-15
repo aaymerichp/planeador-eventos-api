@@ -11,7 +11,7 @@ class ServicesController():
         events = mongo_helper.get_all_in_collection('events')
         for event in events:
             if not event.get('services'):
-                return
+                return return_services
             for service in event.get('services'):
                 if service.get('provider') == provider:
                     event.pop('services')
