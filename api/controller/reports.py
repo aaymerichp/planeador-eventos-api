@@ -20,7 +20,6 @@ class ReportsController():
 
         events = mongo_helper.get_objects_by_filter('events', filter)
 
-        print(events)
         total_amount = 0
         for event in events:
             for service in event.get('services'):

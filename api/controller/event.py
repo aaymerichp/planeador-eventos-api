@@ -1,3 +1,7 @@
+from datetime import datetime
+from dateutil.relativedelta import relativedelta
+
+
 from uuid import UUID
 
 from api.app import mongo_helper
@@ -32,7 +36,8 @@ class EventController():
             if not total_services_amount:
                 return None
             service["amount"] = total_services_amount
-            service["payment_due_date"] = "2021/12/01"
+            today_plus_one_month = datetime.today() + relativedelta(months=1)
+            service["payment_due_date"] = today_plus_one_month.strftime('%Y-%m-%d')
             service["payment_status"] = "PENDING"
             service["payment_uuid"] = None
             service["products"] = products
