@@ -2,11 +2,12 @@ from typing import Union
 from flask import Flask
 from flask_pymongo import PyMongo
 from pymongo.collection import Collection
-from uuid import uuid4
+from uuid import uuid4, UUID
+
 
 class MongoHelper():
     def __init__(self, app: Flask):
-        mongodb_client = PyMongo(app)
+        mongodb_client = PyMongo(app, uuidRepresentation='standard')
         self.db = mongodb_client.db
 
     def get_collection(self, collection: str) -> Collection:
@@ -19,7 +20,7 @@ class MongoHelper():
             service.pop('_id')
         return results
 
-    def get_object_by_uuid(self, collection: str, uuid: str) -> dict:
+    def get_object_by_uuid(self, collection: str, uuid: UUID) -> dict:
         collection = self.get_collection(collection)
         result = collection.find_one({'uuid': uuid})
         if result:

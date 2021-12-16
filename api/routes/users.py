@@ -1,3 +1,5 @@
+from uuid import UUID
+
 from flask import request, jsonify, Response, make_response
 
 from api.helper.json_encoder import JSONEncoder
