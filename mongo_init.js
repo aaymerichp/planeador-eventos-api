@@ -418,57 +418,65 @@ db.products.insertMany([
 //Eventos
 db.events.insertMany([
     {
-        "area": [],
-        "canton": [],
-        "description": "Boda de Arturo y Angie",
-        "finish_time": "2021-12-15T00:00:00.00000000",
-        "guest_count": 300,
-        "image": "@drawable/otros",
-        "is_active": true,
-        "long_lat": {
-            "coordinates": [
-                9.9141811,
-                -84.2422125
-            ],
-            "type": "Point"
-        },
-        "name": "Boda de Arturo y Angie",
-        "provincia": [
-            "Heredia"
+    "area": [],
+    "canton": [],
+    "description": "Boda de Arturo y Angie",
+    "finish_time": "2021-12-15T00:00:00.00000000",
+    "guest_count": 300,
+    "image": "@drawable/otros",
+    "is_active": true,
+    "long_lat": {
+        "coordinates": [
+            9.9141811,
+            -84.2422125
         ],
-        "services": [
-            {
-
-                "payment_due_date": "2021/12/01",
-                "payment_status": "PENDING",
-                "payment_uuid": null,
-                "products": [
-                    {
-                        "rate_quantity": 1,
-                        "uuid": "340f33c3-784e-4452-a663-a38f8bee8f1c"
-                    },
-                    {
-
-                        "uuid": "06a740a9-f74e-4585-82aa-5fdb3f8aced1"
-                    },
-                    {
-
-                        "uuid": "340f33c3-784e-4452-a663-a38f8bee8f1c"
-                    },
-                    {
-
-                        "uuid": "340f33c3-784e-4452-a663-a38f8bee8f1c"
-                    }
-                ],
-                "provider": "d011b895-0766-444a-9fa3-06075775b67d",
-                "uuid": "a11acc47-dc69-48f8-ae9f-743d4fd1e643"
-            }
-        ],
-        "start_time": "2021-12-15T00:00:00.00000000",
-        "type": "Otro",
-        "user": "a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
-        "uuid": "f4924ac6-f31c-4a4b-bbdf-df3459b89980"
+        "type": "Point"
     },
+    "name": "Boda de Arturo y Angie",
+    "provincia": [
+        "Heredia"
+    ],
+    "services": [
+        {
+            "products": [
+                {
+                    "rate_quantity": 1,
+                    "uuid": "241f7b0a-40b5-496b-90f8-e98334465c2c"
+                }
+            ],
+            "provider": "d011b895-0766-444a-9fa3-06075775b67d",
+            "uuid": "7b83aa1b-4b47-4246-98f4-bce447cf3149"
+        },
+        {
+            "provider": "d011b895-0766-444a-9fa3-06075775b67d",
+            "uuid": "1ae4376b-55cd-49d7-bed8-9260305151a2",
+            "products": [
+                {
+                    "rate_quantity": 300,
+                    "uuid": "06a740a9-f74e-4585-82aa-5fdb3f8aced1"
+                },
+                {
+                    "rate_quantity": 5,
+                    "uuid": "9dbb3c25-f9f0-4e06-aef1-a749e29d5459"
+                }
+            ]
+        },
+        {
+            "provider": "d011b895-0766-444a-9fa3-06075775b67d",
+            "uuid": "e48f265f-85aa-4b7d-a62c-c79b6201f53c",
+            "products": [
+                {
+                    "rate_quantity": 1,
+                    "uuid": "3bcf7eb2-574a-4c9c-8ede-2374fe9b75bd"
+                }
+            ]
+        }
+    ],
+    "start_time": "2021-12-15T00:00:00.00000000",
+    "type": "Otro",
+    "user": "a11d39d6-bdbd-4f08-92cd-0dce38ddbd27",
+    "uuid": "f4924ac6-f31c-4a4b-bbdf-df3459b89980"
+},
     {
         "area": [],
         "canton": [],

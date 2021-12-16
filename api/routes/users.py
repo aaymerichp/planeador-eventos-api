@@ -33,4 +33,7 @@ def get_users():
 
 @app.route(f'/{API_ROUTE}/{OBJECT}/email/<string:email>')
 def get_user_by_email(email):
-    return jsonify(mongo_helper.get_objects_by_attribute(COLLECTION, 'email', email)[0])
+    match = mongo_helper.get_objects_by_attribute(COLLECTION, 'email', email)
+    if match:
+        return jsonify(match[0])
+    return make_response(jsonify({"message": "No match found"}), 404)
